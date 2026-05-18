@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@import "@fontsource-variable/eb-garamond/wght.css";
+
+:root {
+  font-family: "EB Garamond Variable", serif;
+}
