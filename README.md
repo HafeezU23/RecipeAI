@@ -1,16 +1,24 @@
-# React + Vite
+## 📌 How to Use RecipeAI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. **Sign Up / Login**  
+   Create an account or log in using Firebase authentication.
 
-Currently, two official plugins are available:
+2. **Enter Ingredients**  
+   Go to the home page and enter the ingredients you have available (e.g., chicken, rice, onion, garlic).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+3. **Generate Recipe**  
+   Click on the **Generate Recipe** button. The AI will process your ingredients using Google Gemini.
 
-## React Compiler
+4. **View Recipe**  
+   You will get a complete recipe including:
+   - Recipe name  
+   - Cooking steps  
+   - Preparation time  
+   - Difficulty level  
+   - Generated image (if enabled)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+5. **Save Recipe**  
+   Save your favorite recipes to your personal dashboard.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+6. **Manage Recipes**  
+   View, edit, or delete your saved recipes anytime from the dashboard.
