@@ -5,14 +5,15 @@ const sendVerificationEmail= async(email, verificationLink)=>{
   try{
           
     const transporter = nodemailer.createTransport({
-           host: "smtp.gmail.com",
-           port: 465,
-           secure: true,
-           auth:{
-            user:process.env.MAIL_ID,
-            pass:process.env.MAIL_APP_PASSWORD
-           }
-    })
+      service: "gmail",
+      auth: {
+        user: process.env.MAIL_ID,
+        pass: process.env.MAIL_APP_PASSWORD,
+      },
+      tls: {
+        rejectUnauthorized: false
+      }
+    });
 
     const mailOptions = {
         from: `"Recipe AI" <${process.env.MAIL_ID}>`,
@@ -26,8 +27,9 @@ const sendVerificationEmail= async(email, verificationLink)=>{
         <p>${verificationLink}</p>`
     }
 
-    await transporter.sendMail(mailOptions)
-    return true
+    const info = await transporter.sendMail(mailOptions);
+    console.log("[NODEMAILER SUCCESS] Message sent:", info.messageId, info.response);
+    return true;
   }catch(error){
     console.error("Failed to send verification email:", error);
     throw new Error(`Could not send verification email: ${error.message}`);
