@@ -60,11 +60,11 @@ const Signup = () => {
         email: email,
         password: password,
       });
-      if (data?.error || data.message) {
-        setError(data.error || data.message);
-        toast.error(data.error || data.message);
+      if (data?.error) {
+        setError(data.error);
+        toast.error(data.error);
       } else {
-        toast.success(data.message);
+        toast.success(data.message || "Account created successfully!");
         navigate("/login");
       }
     } catch (error) {
