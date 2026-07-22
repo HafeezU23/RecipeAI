@@ -27,7 +27,9 @@ const sendVerificationEmail= async(email, verificationLink)=>{
     await transporter.sendMail(mailOptions)
     return true
   }catch(error){
-      throw new Error("Could not send verification email");  }
+    console.error("Failed to send verification email:", error);
+    throw new Error(`Could not send verification email: ${error.message}`);
+  }
 
 }
 
