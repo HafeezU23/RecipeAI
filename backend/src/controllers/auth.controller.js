@@ -45,7 +45,7 @@ try{
     })
 
     const verificationLink = await firebaseAdmin.auth().generateEmailVerificationLink(email);
-    
+    console.log(`[VERIFICATION LINK] for ${email}: ${verificationLink}`);
 
     await sendVerificationEmail(email, verificationLink);
 
