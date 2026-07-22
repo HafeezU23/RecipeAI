@@ -5,7 +5,10 @@ const sendVerificationEmail= async(email, verificationLink)=>{
   try{
           
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true,
+      family: 4, // Force IPv4 to prevent ENETUNREACH IPv6 errors on Render
       auth: {
         user: process.env.MAIL_ID,
         pass: process.env.MAIL_APP_PASSWORD,
